@@ -11,13 +11,13 @@ cosyvoice = CosyVoice('pretrained_models/CosyVoice-300M')
 # Define function to process user input and generate TTS
 def generate_tts(gender, emotion, text_to_speak):
     # Construct the path to the selected prompt speech audio
-    input_path = f'/mnt/user/bufan/zwt/CosyVoice/elderly_data/input/{gender}/{emotion}.wav'
+    input_path = f'/elderly_data/input/{gender}/{emotion}.wav'
 
     # Load the prompt speech audio
     prompt_speech_16k = load_wav(input_path, 16000)
 
     # Create output directory if it doesn't exist
-    output_directory = '/mnt/user/bufan/zwt/CosyVoice/elderly_data/output'
+    output_directory = '/elderly_data/output'
     os.makedirs(output_directory, exist_ok=True)
 
     # Add timestamp to avoid overwriting files
